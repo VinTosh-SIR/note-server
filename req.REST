@@ -1,8 +1,8 @@
-POST http://localhost:5500/api/item
+POST http://localhost:5500/api/items
 Content-Type: application/json
 
 {
-  "item": "3"
+  "item": "new text"
 }
 
 ###
@@ -16,14 +16,13 @@ PUT http://localhost:5500/api/items/:id
 Content-Type: application/json
 
 {
-  "item": "third updated"
+  "item": "text"
 }
 
 ###
 
-DELETE http://localhost:5500/api/items/:id
+DELETE http://localhost:5500/api/item/63e0b4ec16ebf8b0ad6be14e
 Content-Type: application/json
 
-{
-  "item": "third updated"
-}
+
+

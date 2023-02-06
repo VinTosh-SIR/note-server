@@ -4,7 +4,7 @@ const todoItemsModel = require('../models/todoItems');
 
 
 // add item
-router.post('/api/item', async (req, res) => {
+router.post('/api/items', async (req, res) => {
     try {
         const newItem = new todoItemsModel({
             item: req.body.item
@@ -18,7 +18,7 @@ router.post('/api/item', async (req, res) => {
 
 
 // get item
-router.get('/api/items/', async (req, res) => {
+router.get('/api/items', async (req, res) => {
     try {
         const allTodoItems = await todoItemsModel.find({});
         res.status(200).json(allTodoItems);
@@ -40,7 +40,7 @@ router.put('/api/items/:id', async (req, res) => {
 
 
 //delete item
-router.delete('/api/items/:id', async (req, res) => {
+router.delete('/api/item/:id', async (req, res) => {
     try {
         const deleteItem = await todoItemsModel.findByIdAndDelete(req.params.id);
         res.status(200).json('Item Deleted');
