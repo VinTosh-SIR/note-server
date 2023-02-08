@@ -9,8 +9,8 @@ router.post('/api/items', async (req, res) => {
         const newItem = new todoItemsModel({
             item: req.body.item
         })
-        const addItem = await newItem.save()
-        res.status(200).json('Item Added Successfully.')
+        const addItem = await newItem.save();
+        res.status(200).json(newItem);
     } catch (err) {
         res.json(err);
     }
@@ -29,7 +29,7 @@ router.get('/api/items', async (req, res) => {
 
 
 //update item
-router.put('/api/items/:id', async (req, res) => {
+router.put('/api/item/:id', async (req, res) => {
     try {
         const updateItem = await todoItemsModel.findByIdAndUpdate(req.params.id, {$set: req.body});
         res.status(200).json('Item Updated');
